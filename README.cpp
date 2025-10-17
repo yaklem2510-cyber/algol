@@ -1,44 +1,45 @@
 1. СОРТИРОВКА ВЫБОРОМ (SELECTION SORT)
-###Код:
-'''cpp
-#include <iostream>
-#include <vector>
-using namespace std;
-
-void selectionSort(vector<int>& arr) {
-    int n = arr.size();
+Код:
     
-    for (int i = 0; i < n - 1; i++) {
-        int minIndex = i;
+    cpp
+    #include <iostream>
+    #include <vector>
+    using namespace std;
+    
+    void selectionSort(vector<int>& arr) {
+        int n = arr.size();
         
-        for (int j = i + 1; j < n; j++) {
-            if (arr[j] < arr[minIndex]) {
-                minIndex = j;
+        for (int i = 0; i < n - 1; i++) {
+            int minIndex = i;
+            
+            for (int j = i + 1; j < n; j++) {
+                if (arr[j] < arr[minIndex]) {
+                    minIndex = j;
+                }
+            }
+            
+            if (minIndex != i) {
+                swap(arr[i], arr[minIndex]);
             }
         }
-        
-        if (minIndex != i) {
-            swap(arr[i], arr[minIndex]);
-        }
     }
-}
+    
+    int main() {
+        vector<int> arr = {64, 25, 12, 22, 11};
+        
+        cout << "Исходный массив: ";
+        for (int num : arr) cout << num << " ";
+        cout << endl;
+        
+        selectionSort(arr);
+        
+        cout << "Отсортированный массив: ";
+        for (int num : arr) cout << num << " ";
+        cout << endl;
+        
+        return 0;
+    }
 
-int main() {
-    vector<int> arr = {64, 25, 12, 22, 11};
-    
-    cout << "Исходный массив: ";
-    for (int num : arr) cout << num << " ";
-    cout << endl;
-    
-    selectionSort(arr);
-    
-    cout << "Отсортированный массив: ";
-    for (int num : arr) cout << num << " ";
-    cout << endl;
-    
-    return 0;
-}
- '''
 
 Описание работы:
 Сортировка выбором - это алгоритм, который на каждом шаге находит минимальный элемент из неотсортированной части массива и помещает его в начало отсортированной части.
