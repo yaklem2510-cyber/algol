@@ -1,5 +1,5 @@
 1. СОРТИРОВКА ВЫБОРОМ (SELECTION SORT)
-Код:
+###Код:
 '''cpp
 #include <iostream>
 #include <vector>
